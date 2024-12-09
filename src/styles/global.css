@@ -1,0 +1,95 @@
+:root {
+    /* Color Variables */
+    --primary-color: #007bff;
+    --secondary-color: #0039CB;
+    --success-color: #00C853;
+    --danger-color: #FF1744;
+    --background-dark: #121212;
+    --background-light: #1E1E1E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B3B3B3;
+    --border-color: #333333;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Price Changes */
+.price-up {
+    color: var(--success-color);
+}
+
+.price-down {
+    color: var(--danger-color);
+}
+
+/* Table Styles */
+.crypto-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.crypto-table th,
+.crypto-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.crypto-table th {
+    background-color: var(--background-light);
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .crypto-table {
+        font-size: 0.875rem;
+    }
+} 
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+} 
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0.5rem;
+  }
+  
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+}
+
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: 1fr !important;
+  }
+} 

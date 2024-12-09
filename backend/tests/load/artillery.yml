@@ -1,0 +1,32 @@
+config:
+  target: "http://localhost:5000"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 50
+      name: "Warm up phase"
+    - duration: 120
+      arrivalRate: 50
+      name: "Sustained load"
+    - duration: 60
+      arrivalRate: 50
+      rampTo: 100
+      name: "Spike phase"
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "Browse API endpoints"
+    flow:
+      - get:
+          url: "/api/coins/markets"
+      - think: 2
+      - get:
+          url: "/api/coins/price/BTC"
+      - think: 1
+      - get:
+          url: "/api/posts"
+          qs:
+            page: 1
+            limit: 10 
